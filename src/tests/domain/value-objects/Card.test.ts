@@ -1,4 +1,5 @@
 import {describe, it, expect} from "vitest";
+import {Card, Rank, Suit} from "../../../domain/value-objects/Card.js";
 
 describe("Card", () => {
     describe("constructor", () => {
