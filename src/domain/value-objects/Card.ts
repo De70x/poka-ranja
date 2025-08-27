@@ -11,9 +11,6 @@ export enum Rank {
   JACK = 'J', QUEEN = 'Q', KING = 'K', ACE = 'A'
 }
 
-
-
-
 export class Card {
   private static readonly RANK_VALUES: Record<Rank, number> = {
     [Rank.TWO]: 2,
@@ -30,36 +27,34 @@ export class Card {
     [Rank.KING]: 13,
     [Rank.ACE]: 14
   };
-
+  
   constructor(private readonly rank: Rank, private readonly suit: Suit) {
   }
-
+  
+  static sortCards(card1: Card, card2: Card) {
+    return card1.compareTo(card2)
+  }
+  
   getRank(): Rank {
     return this.rank
   }
-
+  
   getRankValue(): number {
     return Card.RANK_VALUES[this.getRank()]
   }
-
+  
   getSuit(): Suit {
     return this.suit
   }
-
+  
   compareTo(card: Card): number {
-    if(this.getRankValue() > card.getRankValue()){
+    if (this.getRankValue() > card.getRankValue()) {
       return -1
-    }
-    else if(this.getRankValue() < card.getRankValue()){
+    } else if (this.getRankValue() < card.getRankValue()) {
       return 1
-    }
-    else{
+    } else {
       return 0
     }
   }
-
-  static sortCards(card1:Card, card2:Card){
-    return card1.compareTo(card2)
-  }
-
+  
 }
