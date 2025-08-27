@@ -1,7 +1,7 @@
 import {Hand} from "./Hand.js";
 
 export class CardRange {
-  private readonly hands: Hand[];
+  private readonly hands: Hand[] = [];
   
   constructor(private readonly name: string) {
   }
