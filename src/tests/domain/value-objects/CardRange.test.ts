@@ -7,5 +7,13 @@ describe("CardRange", () => {
       const range = new CardRange('name');
       expect(range.getHands().length).toEqual(169)
     });
+    it('should have all the different combos', () => {
+      const range = new CardRange('name');
+      let tempHand = null
+      range.getHands().forEach((hand) => {
+        expect(tempHand).not.toEqual(hand);
+        tempHand = hand;
+      })
+    })
   })
 })
