@@ -12,7 +12,7 @@ export enum Rank {
 }
 
 export class Card {
-  private static readonly RANK_VALUES: Record<Rank, number> = {
+  public static readonly RANK_VALUES: Record<Rank, number> = {
     [Rank.TWO]: 2,
     [Rank.THREE]: 3,
     [Rank.FOUR]: 4,

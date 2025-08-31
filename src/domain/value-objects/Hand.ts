@@ -7,7 +7,7 @@ export enum HAND_TYPES {
 }
 
 export class Hand {
-  constructor(private readonly name: string) {
+  constructor(private name: string) {
     if (!Object.values(Rank).includes(name.charAt(0) as Rank) || !Object.values(Rank).includes(name.charAt(1) as Rank)) {
       throw new Error('DOMAIN_EXCEPTION_UNKNOWN_HAND');
     }
@@ -26,5 +26,13 @@ export class Hand {
     } else {
       throw new Error(`Unhandled hand ${this.name}`)
     }
+  }
+  
+  public getValue() {
+    return this.name
+  }
+  
+  public setValue(value: string) {
+    this.name = value;
   }
 }
